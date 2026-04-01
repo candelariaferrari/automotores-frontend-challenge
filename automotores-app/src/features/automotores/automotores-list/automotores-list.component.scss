@@ -1,0 +1,49 @@
+.section-container {
+  margin: 2rem;
+}
+.buttons-section-container{
+  display: flex;
+
+  justify-content: space-between;
+  margin: 2rem 0rem;
+}
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  gap: 6px;
+  width: 40%;
+  margin: 0px;
+  padding: 0px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.table-container {
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.demo-table {
+  width: 100%;
+
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
