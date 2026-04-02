@@ -4,6 +4,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 export interface Automotor {
   domain: string;
@@ -15,6 +16,7 @@ export interface Automotor {
 
 @Component({
   selector: 'app-automotores-list',
+  standalone: true,
   imports: [
     CommonModule,
     MatTableModule,
@@ -24,7 +26,11 @@ export interface Automotor {
   templateUrl: './automotores-list.component.html',
   styleUrl: './automotores-list.component.scss'
 })
+
 export class AutomotoresListComponent {
+
+  constructor(private router: Router) {}
+
   displayedColumns: string[] = ['domain', 'owner', 'cuit', 'fabrication', 'actions'];
 
   searchValue: string = '';
@@ -69,5 +75,10 @@ export class AutomotoresListComponent {
     item.cuit.toLowerCase().includes(value)
   );
   }
-
+  goToCreate() {
+    this.router.navigate(['/automotores/crear']);
+  }
+  goToEdit(domain: string) {
+    this.router.navigate(['/automotores/editar', domain]);
+  }
 }
