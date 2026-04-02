@@ -1,0 +1,32 @@
+{
+  "automotores": [
+    {
+      "domain": "ABC123",
+      "owner": "Juan Perez",
+      "chassis": "123",
+      "motor": "456",
+      "color": "Rojo",
+      "fabrication": "202201",
+      "cuit": "20304050607"
+    },
+    {
+      "domain": "ABC456",
+      "owner": "Pepita Perez",
+      "chassis": "456",
+      "motor": "789",
+      "color": "azul",
+      "fabrication": "202204",
+      "cuit": "24304050607"
+    }
+  ],
+  "sujetos": [
+    {
+      "cuit": "20304050607",
+      "owner": "Juan Perez"
+    },
+    {
+      "cuit": "24304050607",
+      "owner": "Pepita Perez"
+    }
+  ]
+}

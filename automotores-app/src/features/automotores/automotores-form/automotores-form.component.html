@@ -5,10 +5,10 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <div class="form-grid">
-
+      <!-- Dominio -->
       <mat-form-field appearance="outline">
         <mat-label>Dominio</mat-label>
-        <input matInput formControlName="domain" placeholder="Ej: AAA999"/>
+        <input matInput formControlName="domain" placeholder="Ej: AAA999" />
         <mat-error *ngIf="form.get('domain')?.hasError('required')">
           El dominio es obligatorio
         </mat-error>
@@ -18,28 +18,25 @@
         </mat-error>
       </mat-form-field>
 
+      <!-- Chasis -->
       <mat-form-field appearance="outline">
-        <mat-label>Dueño</mat-label>
-        <input matInput formControlName="owner" />
+        <mat-label>Numero de Chasis</mat-label>
+        <input matInput formControlName="chassis" />
       </mat-form-field>
 
+      <!-- Motor -->
       <mat-form-field appearance="outline">
-        <mat-label>CUIT</mat-label>
-        <input matInput formControlName="cuit" />
-        <mat-error *ngIf="form.get('cuit')?.hasError('required')">
-          El CUIT es obligatorio
-        </mat-error>
-
-        <mat-error *ngIf="form.get('cuit')?.hasError('invalidFormat')">
-          Debe tener 11 dígitos
-        </mat-error>
-
-        <mat-error *ngIf="form.get('cuit')?.hasError('invalidCuit')">
-          CUIT inválido
-        </mat-error>
-
+        <mat-label>Numero de Motor</mat-label>
+        <input matInput formControlName="motor" />
       </mat-form-field>
 
+      <!-- Color -->
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <input matInput formControlName="color" />
+      </mat-form-field>
+
+      <!-- Fecha fabricación -->
       <mat-form-field appearance="outline">
         <mat-label>Fecha fabricación (YYYYMM)</mat-label>
         <input matInput formControlName="fabrication" />
@@ -54,6 +51,29 @@
         <mat-error *ngIf="form.get('fabrication')?.hasError('futureDate')">
           No puede ser futura
         </mat-error>
+      </mat-form-field>
+
+      <!-- CUIT -->
+      <mat-form-field appearance="outline">
+        <mat-label>CUIT</mat-label>
+        <input matInput formControlName="cuit" />
+        <mat-error *ngIf="form.get('cuit')?.hasError('required')">
+          El CUIT es obligatorio
+        </mat-error>
+
+        <mat-error *ngIf="form.get('cuit')?.hasError('invalidFormat')">
+          Debe tener 11 dígitos
+        </mat-error>
+
+        <mat-error *ngIf="form.get('cuit')?.hasError('invalidCuit')">
+          CUIT inválido
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Dueño -->
+      <mat-form-field appearance="outline">
+        <mat-label>Dueño</mat-label>
+        <input matInput formControlName="owner" />
       </mat-form-field>
 
     </div>
