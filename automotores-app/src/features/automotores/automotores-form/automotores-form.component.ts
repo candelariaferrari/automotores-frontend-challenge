@@ -1,14 +1,16 @@
-import { MatInputModule } from '@angular/material/input';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+
 import { cuitValidator } from '../../../app/validators/cuit.validator';
 import { DateValidator } from '../../../app/validators/date.validator';
+
+import { AutomotoresService } from '../../../core/services/automotores.service';
 
 @Component({
   selector: 'app-automotores-form',
@@ -27,21 +29,26 @@ export class AutomotoresFormComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private automotoresService: AutomotoresService,
     private fb: FormBuilder
   ) {
+
     this.form = this.fb.group({
       domain: ['', [
         Validators.required,
         Validators.pattern(/^[A-Z]{3}\d{3}$|^[A-Z]{2}\d{3}[A-Z]{2}$/)
       ]],
-      owner: ['', [Validators.required]],
+      chassis:['', [ Validators.required,]],
+      motor:['', [ Validators.required,]],
+      color:['', [ Validators.required,]],
+      fabrication: ['', [
+        Validators.required,
+        DateValidator]],
       cuit: ['', [
         Validators.required,
         cuitValidator
       ]],
-      fabrication: ['', [
-        Validators.required,
-        DateValidator]]
+      owner: ['', [Validators.required]],
     });
   }
 
@@ -66,9 +73,8 @@ export class AutomotoresFormComponent {
 
   onSubmit() {
     const automotor = this.form.value;
-    const subject = this.findSubjectByCuit(automotor.cuit);
-    if (!automotor.cuit) return;
 
+    const subject = this.findSubjectByCuit(automotor.cuit);
 
     if (!subject) {
       this.openCreateSubjectDialog(automotor.cuit);
@@ -80,11 +86,20 @@ export class AutomotoresFormComponent {
       return;
     }
 
-    console.log('Guardado:', automotor);
-    alert('Automotor guardado correctamente');
+    this.automotoresService.createAutomotor(automotor).subscribe({
+      next: () => {
+        alert('Guardado correctamente');
+        this.router.navigate(['/automotores']);
+      },
+      error: (err) => {
+        console.error(err);
+
+        if (err.status === 422) {
+          alert('Error de validación del backend');
+        }
+      }
+    });
   }
-
-
 
   loadAutomotor(domain: string) {
     const mock = {
