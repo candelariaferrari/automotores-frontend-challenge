@@ -1,32 +1,77 @@
 {
   "automotores": [
     {
-      "domain": "ABC123",
-      "owner": "Juan Perez",
-      "chassis": "123",
-      "motor": "456",
-      "color": "Rojo",
-      "fabrication": "202201",
-      "cuit": "20304050607"
-    },
-    {
+      "id": "2",
       "domain": "ABC456",
-      "owner": "Pepita Perez",
       "chassis": "456",
       "motor": "789",
       "color": "azul",
       "fabrication": "202204",
-      "cuit": "24304050607"
+      "cuit": "27304050607",
+      "owner": "Pepita Perez"
+    },
+    {
+      "id": "gMPCugsub94",
+      "domain": "CCC888",
+      "chassis": "123456",
+      "motor": "78945",
+      "color": "verde",
+      "fabrication": "202308",
+      "cuit": "24371345457",
+      "owner": "Pepito Juarez"
+    },
+    {
+      "id": "WjVbptE0ok4",
+      "domain": "DDD222",
+      "chassis": "1234354653",
+      "motor": "6756878",
+      "color": "VERDE",
+      "fabrication": "202509",
+      "cuit": "20359633069",
+      "owner": "Julian Dario"
+    },
+    {
+      "id": "sRo5HtN7PkY",
+      "domain": "AAA123",
+      "chassis": "1876349450",
+      "motor": "7974593496",
+      "color": "AMARILLO",
+      "fabrication": "202304",
+      "cuit": "20371345451",
+      "owner": "Cande Fe"
+    },
+    {
+      "id": "ST2HjKsxC0A",
+      "domain": "EEE666",
+      "chassis": "094058568",
+      "motor": "8048503",
+      "color": "AZUL",
+      "fabrication": "202601",
+      "cuit": "27371345456",
+      "owner": "Cata Ros"
+    },
+    {
+      "id": "9CstQ9UE7g4",
+      "domain": "GG235GG",
+      "chassis": "08304945",
+      "motor": "4797394",
+      "color": "negro",
+      "fabrication": "202109",
+      "cuit": "24361354547",
+      "owner": "Val lus"
     }
   ],
   "sujetos": [
     {
       "cuit": "20304050607",
-      "owner": "Juan Perez"
+      "owner": "Juan Perez",
+      "id": "EVmfoEqsFOU"
     },
     {
       "cuit": "24304050607",
-      "owner": "Pepita Perez"
+      "owner": "Pepita Perez",
+      "id": "ftYUA5hoDOk"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
