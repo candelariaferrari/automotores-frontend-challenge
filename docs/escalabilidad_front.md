@@ -1,0 +1,4 @@
+- Componentes reutilizables 
+- Formularios dinámicos
+- Validadores centralizados
+- Angular material para cambiar de theme si fuera necesario

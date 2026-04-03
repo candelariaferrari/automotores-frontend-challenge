@@ -1,0 +1,3 @@
+- Utilice json-server como backend mock para acelerar desarrollo
+- Elegí paginación client-side por simplicidad
+- Se priorizó claridad de UX sobre complejidad visual

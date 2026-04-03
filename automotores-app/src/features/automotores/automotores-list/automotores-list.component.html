@@ -12,14 +12,15 @@
     </div>
 
 
-    <button mat-raised-button>+ Crear automotor</button>
+    <button mat-fab extended (click)="goToCreate()">+ Crear automotor</button>
   </div>
+
   <div class="table-container">
-    <table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" class="demo-table">
+    <table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" matSort class="demo-table">
 
       <!-- Dominio -->
       <ng-container matColumnDef="domain">
-        <th mat-header-cell *matHeaderCellDef> Dominio </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dominio </th>
         <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
       </ng-container>
 
@@ -45,12 +46,12 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-button class="btn-edit">
+          <button mat-button class="btn-edit" (click)="goToEdit(element.domain)">
             <mat-icon>edit</mat-icon>
             <p> Editar</p>
 
           </button>
-          <button mat-button class="btn-delete">
+          <button mat-button class="btn-delete" (click)="delete(element.id)">
             <mat-icon>delete</mat-icon>
             <p> Eliminar</p>
           </button>
@@ -61,8 +62,9 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
-
   </div>
+  <mat-paginator [length]="dataSource.length" [pageSize]="5"></mat-paginator>
+
   <div *ngIf="dataSource.length === 0 && !searchValue" class="no-data">
     No hay automotores cargados
   </div>
@@ -70,3 +72,14 @@
     No se encontraron resultados
   </div>
 </div>
+
+
+<!-- <div *ngIf="loading">
+  Cargando automotores...
+</div>
+<div *ngIf="error">
+  Error al cargar datos
+</div>
+<div *ngIf="!loading && dataSource.length === 0">
+  No hay automotores
+</div> -->
