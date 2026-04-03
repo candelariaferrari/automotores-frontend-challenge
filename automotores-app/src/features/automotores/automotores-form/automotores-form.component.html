@@ -79,10 +79,12 @@
     </div>
 
     <div class="actions">
-      <button mat-button (click)="onCancel()">
-        Cancelar
+      <button mat-fab extended class="btn-delete" (click)="onCancel()">
+        <mat-icon> cancel </mat-icon>
+        <p>Cancelar</p>
       </button>
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      <button  mat-fab extended  type="submit" [disabled]="form.invalid">
+      	<mat-icon> check </mat-icon>
         Guardar
       </button>
 

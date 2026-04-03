@@ -3,9 +3,9 @@
 }
 .buttons-section-container{
   display: flex;
-
   justify-content: space-between;
   margin: 2rem 0rem;
+
 }
 .search-container {
   display: flex;
@@ -49,40 +49,13 @@ mat-form-field {
   font-weight: bold;
 }
 
-.btn-edit{
-  mat-icon{
-    color: #005cbb;
-  }
-  p{
-    color: #1a1b1f;
-    font-weight: normal;
-  }
-  &:hover{
-    p{
-      color: #005cbb;
-      font-weight: 500;
-    }
-  }
-}
-.btn-delete{
-  mat-icon{
-    color: #bb2500;
-  }
-  p{
-    color: #1a1b1f;
-    font-weight: normal;
-  }
-  &:hover{
-    background-color: #bb250028;
-    p{
-      color: #bb2500;
-      font-weight: 500;
-    }
-  }
-}
+
 .no-data {
   text-align: center;
   margin-top: 4rem;
   color: rgb(99, 99, 99);
   font-size: 1.2rem;
+}
+.btn-edit{
+  margin-right: 1rem;
 }

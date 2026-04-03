@@ -1,4 +1,5 @@
 export interface Automotor {
+  id: number;
   domain: string;
   chassis: string;
   motor: string;

@@ -1,4 +1,4 @@
-import { Automotor } from './../../features/automotores/automotores-list/automotores-list.component';
+import { Automotor } from './../models/automotor.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -28,7 +28,7 @@ export class AutomotoresService {
     return this.http.put(`${this.apiUrl}/automotores/${domain}`, data);
   }
 
-  deleteAutomotor(domain: string) {
-    return this.http.delete(`${this.apiUrl}/automotores/${domain}`);
+  deleteAutomotor(id: number) {
+    return this.http.delete(`${this.apiUrl}/automotores/${id}`);
   }
 }
